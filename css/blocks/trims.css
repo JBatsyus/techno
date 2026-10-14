@@ -1,0 +1,136 @@
+.trims {
+  padding: var(--space-xl) 0;
+}
+
+.trims__title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+.trims__tabs {
+  display: flex;
+  gap: var(--space-2xs);
+  margin-top: var(--space-m);
+  overflow-x: auto;
+}
+
+.trims__tab {
+  flex: 0 0 auto;
+  min-height: 2.625rem;
+  padding: var(--space-2xs) var(--space-s);
+  border: 1px solid #000000;
+  border-radius: var(--radius-control);
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color var(--motion), color var(--motion), border-color var(--motion);
+}
+
+.trims__tab--active {
+  background: #000000;
+  color: #ffffff;
+}
+
+.trims__layout {
+  display: grid;
+  align-items: start;
+  gap: var(--space-m);
+  margin-top: var(--space-m);
+}
+
+.trims__list {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2xs);
+  max-height: 32.5rem;
+  overflow: auto;
+  padding-right: var(--space-3xs);
+}
+
+.trims__option {
+  padding: var(--space-xs) var(--space-s);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-control);
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--motion), background-color var(--motion);
+}
+
+.trims__option--active {
+  border-color: var(--color-accent);
+  box-shadow: inset 3px 0 0 var(--color-accent);
+}
+
+.trims__card {
+  align-self: start;
+  padding: var(--space-m);
+  border-radius: var(--radius-card);
+  background: var(--color-soft);
+}
+
+.trims__kicker {
+  color: var(--color-grey);
+  font-size: var(--text-s);
+}
+
+.trims__name {
+  font-size: var(--text-l);
+  font-weight: 600;
+}
+
+.trims__specs {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trims__spec {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.trims__spec-name {
+  color: var(--color-muted);
+}
+
+.trims__prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.trims__old {
+  color: var(--color-grey);
+  text-decoration: line-through;
+  font-family: var(--font-price);
+  font-size: var(--text-m);
+}
+
+.trims__price {
+  font-family: var(--font-price);
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+.trims__actions {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+@media (min-width: 900px) {
+  .trims__layout {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .trims__actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}

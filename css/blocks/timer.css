@@ -1,0 +1,85 @@
+.timer {
+  padding: 2.5rem 0 2.75rem;
+  background: var(--color-soft);
+  color: #000000;
+}
+
+.timer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.timer__label {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.timer__grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.timer__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6.25rem;
+  height: 6.25rem;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-control);
+  background: #ffffff;
+  text-align: center;
+}
+
+.timer__value {
+  font-family: var(--font-price);
+  font-size: clamp(1.65rem, 2.6vw, 2.35rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.timer__unit {
+  margin-top: 0.2rem;
+  color: #6b6b6b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.timer__action {
+  min-width: 16rem;
+}
+
+@media (max-width: 719px) {
+  .timer {
+    padding: 2rem 0 2.25rem;
+  }
+
+  .timer__grid {
+    gap: 0.6rem;
+  }
+
+  .timer__cell {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .timer__unit {
+    font-size: 0.875rem;
+  }
+
+  .timer__action {
+    min-width: 0;
+    width: 100%;
+  }
+}
