@@ -35,7 +35,7 @@
   flex-direction: column;
   width: 100%;
   padding-top: var(--space-xl);
-  padding-bottom: calc(var(--ticker-height) * 2);
+  padding-bottom: var(--ticker-height);
   text-align: left;
 }
 
