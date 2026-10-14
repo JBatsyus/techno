@@ -54,14 +54,22 @@ body.is-locked .ticker {
   position: absolute;
   top: var(--space-2xs);
   right: var(--space-2xs);
+  display: grid;
+  place-items: center;
   width: 2.5rem;
   height: 2.5rem;
+  padding: 0;
   border: 0;
   background: transparent;
   cursor: pointer;
-  font-size: var(--text-l);
-  line-height: 1;
+  line-height: 0;
   transition: color var(--motion);
+}
+
+.popup__close svg {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .popup__close:hover {
