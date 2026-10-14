@@ -67,7 +67,7 @@
   color: var(--color-accent);
 }
 
-@media (min-width: 420px) and (max-width: 959px) {
+@media (max-width: 419px) {
   .header__phone {
     display: grid;
     place-items: center;
@@ -165,9 +165,12 @@
 }
 
 @media (min-width: 960px) {
-  .header__dealer,
-  .header__callback {
+  .header__dealer {
     display: block;
+  }
+
+  .header__callback {
+    display: inline-flex;
   }
 
   .header__burger {

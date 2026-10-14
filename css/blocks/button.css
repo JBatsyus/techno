@@ -4,7 +4,8 @@
   justify-content: center;
   gap: 8px;
   min-height: 48px;
-  padding: 12px 22px;
+  /* Капитель TT Commons сидит выше середины em-бокса: верхний отступ чуть больше, чтобы краска была по центру. */
+  padding: 14.5px 22px 9.5px;
   border: 2px solid transparent;
   border-radius: var(--radius-control);
   text-decoration: none;
@@ -12,6 +13,8 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-size: var(--text-xs);
+  line-height: 1;
+  text-box: trim-both cap alphabetic;
   font-weight: 600;
   cursor: pointer;
   background: transparent;

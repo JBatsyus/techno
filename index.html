@@ -51,8 +51,8 @@
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <picture class="hero__picture">
-        <source media="(max-width: 719px)" srcset="img/banners/720x1330_Main_mobile_2.jpg" sizes="100vw">
-        <img class="hero__photo" src="img/banners/1920x828_Main_desktop.jpg" alt="" width="1920" height="828" sizes="100vw">
+        <source media="(max-width: 719px)" srcset="img/banners/720x1330_Main_mobile_2.jpg">
+        <img class="hero__photo" src="img/banners/1920x828_Main_desktop.jpg" alt="" width="1920" height="828">
       </picture>
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="wrap hero__inner">
@@ -84,7 +84,7 @@
       </div>
     </section>
 
-    <section class="timer" role="timer" aria-live="polite" aria-atomic="true" aria-label="До конца акции осталось">
+    <div class="timer" role="timer" aria-live="polite" aria-atomic="true" aria-label="До конца акции осталось">
       <div class="wrap timer__inner">
         <p class="timer__label">До конца акции осталось:</p>
         <div class="timer__grid">
@@ -95,7 +95,7 @@
         </div>
         <button class="button button--accent timer__action" type="button" data-open-popup="lead" data-form="offer" data-popup-title="Получите уникальное предложение на Sollers" data-popup-text="Оставьте заявку, и мы перезвоним с лучшим предложением" data-popup-submit="Узнать условия">Получить предложение</button>
       </div>
-    </section>
+    </div>
 
     <section class="catalog" id="models" aria-labelledby="catalog-title">
       <div class="wrap">
@@ -107,8 +107,8 @@
 
     <section class="leasing" id="leasing" aria-labelledby="leasing-title">
       <picture class="leasing__picture">
-        <source media="(max-width: 719px)" srcset="img/banners/720x1320_лизинг_mobile.jpg" sizes="100vw">
-        <img class="leasing__photo" src="img/banners/1920x460_лизинг_desktop.jpg" alt="" width="1920" height="460" sizes="100vw">
+        <source media="(max-width: 719px)" srcset="img/banners/720x1320_лизинг_mobile.jpg">
+        <img class="leasing__photo" src="img/banners/1920x460_лизинг_desktop.jpg" alt="" width="1920" height="460">
       </picture>
       <div class="leasing__shade"></div>
       <div class="wrap leasing__inner">
@@ -149,15 +149,17 @@
         <div class="trims__tabs" role="tablist" aria-label="Модели" data-trim-tabs></div>
         <div class="trims__layout" id="trim-panel" role="tabpanel">
           <div class="trims__list" data-trim-list></div>
-          <article class="trims__card" data-trim-card></article>
+          <article class="trims__card" data-trim-card>
+            <h3 class="trims__name">Комплектация</h3>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="tradein" id="tradein" aria-labelledby="tradein-title">
       <picture class="tradein__picture">
-        <source media="(max-width: 719px)" srcset="img/banners/720x1320_Trade-in_mobile.jpg" sizes="100vw">
-        <img class="tradein__photo" src="img/banners/1920x460_Trade-in_desktop.jpg" alt="" width="1920" height="460" sizes="100vw">
+        <source media="(max-width: 719px)" srcset="img/banners/720x1320_Trade-in_mobile.jpg">
+        <img class="tradein__photo" src="img/banners/1920x460_Trade-in_desktop.jpg" alt="" width="1920" height="460">
       </picture>
       <div class="tradein__shade"></div>
       <div class="wrap tradein__inner">
