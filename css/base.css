@@ -75,7 +75,7 @@
   --font-main: "TT Commons Pro", "Raleway", "Segoe UI", sans-serif;
   --font-price: "TT Commons Pro Condensed", "TT Commons Pro", "Arial Narrow", sans-serif;
   --header-height: 4.75rem;
-  --ticker-height: 3.25rem;
+  --ticker-height: calc(var(--text-s) * 1.45 + var(--space-s) * 2);
   --page-width: 72.5rem;
   --page-gutter: clamp(1rem, 2vw, 2rem);
   --space-3xs: 0.25rem;

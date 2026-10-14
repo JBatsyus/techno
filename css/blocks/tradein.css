@@ -28,7 +28,7 @@
   z-index: 1;
   display: grid;
   gap: var(--space-l);
-  padding: var(--space-xl) 0;
+  padding: var(--space-xl) 0 calc(var(--space-xl) + var(--ticker-height));
 }
 
 .tradein__copy {

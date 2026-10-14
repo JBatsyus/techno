@@ -1,7 +1,7 @@
 .timer {
   padding: 2.5rem 0 2.75rem;
-  background: var(--color-grey);
-  color: var(--color-graphite);
+  background: var(--color-graphite);
+  color: var(--color-white);
 }
 
 .timer__inner {
@@ -65,7 +65,7 @@
 }
 
 .timer__unit {
-  color: var(--color-graphite);
+  color: var(--color-white);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
