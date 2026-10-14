@@ -29,6 +29,28 @@
     });
   }
 
+  if (header) {
+    header.addEventListener("mousedown", function (event) {
+      if (event.button !== 0) return;
+      if (!event.target.closest("[data-open-popup]")) return;
+      var scrollY = window.scrollY;
+      event.preventDefault();
+      function keepPlace() {
+        if (window.scrollY === scrollY) return;
+        var root = document.documentElement;
+        var previous = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+        window.scrollTo(0, scrollY);
+        root.style.scrollBehavior = previous;
+      }
+      window.addEventListener("scroll", keepPlace);
+      window.requestAnimationFrame(function () {
+        window.removeEventListener("scroll", keepPlace);
+        keepPlace();
+      });
+    });
+  }
+
   var cookie = document.querySelector(".cookie");
   if (cookie && !localStorage.getItem("sollers-cookie")) {
     cookie.classList.add("cookie--open");
@@ -156,7 +178,7 @@
     popup.setAttribute("aria-hidden", "false");
     popup.removeAttribute("inert");
     var close = popup.querySelector(".popup__close");
-    if (close) close.focus();
+    if (close) close.focus({ preventScroll: true });
   }
 
   function closePopup(popup) {
@@ -167,7 +189,7 @@
       document.body.classList.remove("is-locked");
       document.documentElement.style.removeProperty("--scrollbar-gap");
     }
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
   }
 
   document.addEventListener("click", function (event) {
