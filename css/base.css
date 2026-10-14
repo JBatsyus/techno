@@ -17,8 +17,24 @@
 
 @font-face {
   font-family: "TT Commons Pro";
-  src: url("../fonts/TTCommons-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/TTCommonsPro-Normal.woff2") format("woff2");
+  font-weight: 300 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Commons Pro";
+  src: url("../fonts/TT_Commons_Pro_DemiBold.woff2") format("woff2");
+  font-weight: 500 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Commons Pro Condensed";
+  src: url("../fonts/TT_Commons_Pro_Condensed_Bold.woff2") format("woff2");
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
@@ -39,25 +55,25 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Roboto Condensed";
-  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  --color-bg: #ffffff;
-  --color-text: #231F20;
-  --color-muted: #3d3d3d;
+  --color-white: #ffffff;
+  --color-graphite: #292523;
+  --color-orange: #f47c30;
+  --color-yellow: #fff200;
+  --color-yellow-deep: #ffcb05;
+  --color-red: #c9252c;
+  --color-red-dark: #7c1c21;
   --color-grey: #999999;
-  --color-line: #e6e6e6;
-  --color-accent: #f47c30;
-  --color-accent-dark: #d8661c;
-  --color-soft: #f6f6f6;
+  --color-bg: var(--color-white);
+  --color-text: var(--color-graphite);
+  --color-muted: var(--color-grey);
+  --color-line: var(--color-grey);
+  --color-accent: var(--color-orange);
+  --color-accent-dark: var(--color-red);
+  --color-soft: var(--color-white);
+  --color-danger: var(--color-red);
   --font-main: "TT Commons Pro", "Raleway", "Segoe UI", sans-serif;
-  --font-price: "Roboto Condensed", "TT Commons Pro", "Arial Narrow", sans-serif;
+  --font-price: "TT Commons Pro Condensed", "TT Commons Pro", "Arial Narrow", sans-serif;
   --header-height: 4.75rem;
   --ticker-height: 3.25rem;
   --page-width: 72.5rem;

@@ -271,10 +271,29 @@
       paintCard(model, model.trims[trimIndex]);
     }
 
+    function modelPhoto(model) {
+      if (model.image) return model.image;
+      var colors = model.colors || [];
+      var first = colors[0];
+      return first && first.image ? first.image : "";
+    }
+
     function paintCard(model, trim) {
       card.replaceChildren();
-      card.appendChild(el("p", "trims__kicker", model.name));
-      card.appendChild(el("h3", "trims__name", trim.name));
+      var media = el("div", "trims__media");
+      var src = modelPhoto(model);
+      if (src) {
+        var photo = el("img", "trims__photo");
+        photo.src = src;
+        photo.alt = model.name;
+        media.appendChild(photo);
+      } else {
+        media.appendChild(el("p", "trims__placeholder", "Фото " + model.name + " будет добавлено"));
+      }
+      card.appendChild(media);
+      var body = el("div", "trims__body");
+      body.appendChild(el("p", "trims__kicker", model.name));
+      body.appendChild(el("h3", "trims__name", trim.name));
       var specs = el("ul", "trims__specs");
       [
         ["Двигатель", trim.hp],
@@ -287,18 +306,19 @@
         item.appendChild(el("span", "trims__spec-value", row[1]));
         specs.appendChild(item);
       });
-      card.appendChild(specs);
+      body.appendChild(specs);
       var prices = el("div", "trims__prices");
       prices.appendChild(el("span", "catalog__caption", "Цена в кредит"));
       if (trim.priceOld > trim.price) {
         prices.appendChild(el("span", "trims__old", formatPrice(trim.priceOld)));
       }
       prices.appendChild(el("span", "trims__price", formatPrice(trim.price)));
-      card.appendChild(prices);
+      body.appendChild(prices);
       var actions = el("div", "trims__actions");
       actions.appendChild(actionButton("Рассчитать кредит", "credit", model.name + " " + trim.name, "button button--accent"));
       actions.appendChild(actionButton("Купить в лизинг", "leasing", model.name + " " + trim.name, "button button--line"));
-      card.appendChild(actions);
+      body.appendChild(actions);
+      card.appendChild(body);
     }
 
     paint();

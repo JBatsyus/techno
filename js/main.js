@@ -104,7 +104,11 @@
 
   function paint(node, value) {
     if (!node) return;
-    node.textContent = pad(value);
+    var text = pad(value).slice(-2);
+    var digits = node.querySelectorAll(".timer__digit");
+    if (digits.length < 2) return;
+    digits[0].textContent = text.charAt(0);
+    digits[1].textContent = text.charAt(1);
   }
 
   function tick() {

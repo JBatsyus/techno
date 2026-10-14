@@ -4,8 +4,7 @@
   justify-content: center;
   gap: 8px;
   min-height: 48px;
-  /* Капитель TT Commons сидит выше середины em-бокса: верхний отступ чуть больше, чтобы краска была по центру. */
-  padding: 14.5px 22px 9.5px;
+  padding: 0 22px;
   border: 2px solid transparent;
   border-radius: var(--radius-control);
   text-decoration: none;
@@ -25,7 +24,7 @@
 .button--accent {
   background: var(--color-accent);
   border-color: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .button--accent:hover {
@@ -34,19 +33,20 @@
 }
 
 .button--dark {
-  background: #000000;
-  border-color: #000000;
-  color: #ffffff;
+  background: var(--color-graphite);
+  border-color: var(--color-graphite);
+  color: var(--color-white);
 }
 
 .button--dark:hover {
-  background: #222222;
+  background: var(--color-red-dark);
+  border-color: var(--color-red-dark);
 }
 
 .button--line {
-  background: #ffffff;
-  border-color: #000000;
-  color: #000000;
+  background: var(--color-white);
+  border-color: var(--color-graphite);
+  color: var(--color-graphite);
 }
 
 .button--line:hover {

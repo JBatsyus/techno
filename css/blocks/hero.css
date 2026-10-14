@@ -4,8 +4,8 @@
   align-items: stretch;
   min-height: clamp(36rem, 78vh, 46rem);
   overflow: hidden;
-  color: #ffffff;
-  background: #000000;
+  color: var(--color-white);
+  background: var(--color-graphite);
 }
 
 .hero__picture {
@@ -25,7 +25,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.78) 28%, rgba(0, 0, 0, 0.45) 46%, rgba(0, 0, 0, 0) 64%);
+  background: linear-gradient(90deg, rgba(41, 37, 35, 0.88) 0%, rgba(41, 37, 35, 0.78) 28%, rgba(41, 37, 35, 0.45) 46%, rgba(41, 37, 35, 0) 64%);
 }
 
 .hero__inner {
@@ -48,7 +48,7 @@
 
 .hero__lead {
   margin-top: 0.45em;
-  color: #ffffff;
+  color: var(--color-yellow-deep);
   font-size: clamp(1.5rem, 3.6vw, 2.25rem);
   font-weight: 400;
   line-height: 1.05;
@@ -75,7 +75,7 @@
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 1.125rem;
   background: rgba(255, 255, 255, 0.72);
-  color: #1a1a1a;
+  color: var(--color-graphite);
   text-align: center;
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
@@ -90,26 +90,33 @@
   width: 5.75rem;
   height: 5.75rem;
   border-radius: 50%;
-  background: #e4dcd3;
-  color: #1a1a1a;
+  background: var(--color-white);
+  color: var(--color-graphite);
   transform: translate(-50%, -46%);
 }
 
 .hero__icon svg {
-  width: 2.75rem;
-  height: 2.75rem;
+  display: block;
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+.hero__glyph--tag {
+  width: 3.35rem;
+  height: 1.9rem;
 }
 
 .hero__point-value {
   font-size: clamp(1.2rem, 0.9rem + 0.8vw, 1.8rem);
-  font-weight: 600;
+  font-family: var(--font-price);
+  font-weight: 700;
   line-height: 1.1;
   white-space: nowrap;
 }
 
 .hero__point-note {
   margin-top: 0.15rem;
-  color: #4a4a4a;
+  color: var(--color-graphite);
   font-size: 1rem;
   line-height: 1.2;
 }
@@ -124,7 +131,7 @@
   }
 
   .hero__shade {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.05) 34%, rgba(0, 0, 0, 0.72) 78%);
+    background: linear-gradient(180deg, rgba(41, 37, 35, 0.2) 0%, rgba(41, 37, 35, 0.05) 34%, rgba(41, 37, 35, 0.72) 78%);
   }
 
   .hero__inner {
@@ -149,8 +156,13 @@
   }
 
   .hero__icon svg {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
+  .hero__glyph--tag {
+    width: 1.9rem;
+    height: 1.05rem;
   }
 
   .hero__point-value {

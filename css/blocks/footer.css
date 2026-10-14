@@ -1,10 +1,10 @@
 .footer {
-  background: #ffffff;
+  background: var(--color-white);
   border-top: 1px solid var(--color-line);
 }
 
 .footer__bar {
-  background: #ffffff;
+  background: var(--color-white);
 }
 
 .footer__main {
@@ -16,7 +16,7 @@
 .footer__logo {
   width: clamp(8.5rem, 22vw, 11rem);
   height: auto;
-  background: #ffffff;
+  background: var(--color-white);
 }
 
 .footer__links {

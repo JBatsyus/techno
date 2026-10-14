@@ -1,7 +1,7 @@
 .tradein {
   position: relative;
-  color: #ffffff;
-  background: #111111;
+  color: var(--color-white);
+  background: var(--color-graphite);
 }
 
 .tradein__picture {
@@ -20,7 +20,7 @@
 .tradein__shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.46) 22%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 54%);
+  background: linear-gradient(90deg, rgba(41, 37, 35, 0.72) 0%, rgba(41, 37, 35, 0.46) 22%, rgba(41, 37, 35, 0.1) 40%, rgba(41, 37, 35, 0) 54%);
 }
 
 .tradein__inner {
@@ -63,9 +63,9 @@
 .tradein__panel {
   padding: var(--space-m);
   border-radius: var(--radius-card);
-  background: #ffffff;
+  background: var(--color-white);
   color: var(--color-text);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 16px 40px rgba(41, 37, 35, 0.22);
 }
 
 .tradein__panel-title {
@@ -92,7 +92,7 @@
   }
 
   .tradein__shade {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.5) 24%, rgba(0, 0, 0, 0.12) 46%, rgba(0, 0, 0, 0.4) 100%);
+    background: linear-gradient(180deg, rgba(41, 37, 35, 0.78) 0%, rgba(41, 37, 35, 0.5) 24%, rgba(41, 37, 35, 0.12) 46%, rgba(41, 37, 35, 0.4) 100%);
   }
 
   .tradein__photo {
