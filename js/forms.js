@@ -58,7 +58,7 @@
     var needsVehicle = Boolean(form.elements.vehicle);
     var consent = form.elements.consent && form.elements.consent.checked;
     var ads = form.elements.ads && form.elements.ads.checked;
-    var valid = phone.digits.length === 11 && consent && ads;
+    var valid = phone.digits.length === 11 && consent;
     if (needsName) valid = valid && name.length >= 2;
     if (needsVehicle) valid = valid && vehicle.length >= 2;
     showError(form, !valid);
@@ -81,7 +81,7 @@
       vehicle: vehicle,
       model: fieldValue(form, "model"),
       consent: true,
-      ads: true
+      ads: ads
     };
 
     fetch("php/send.php", {

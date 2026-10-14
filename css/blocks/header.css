@@ -121,20 +121,28 @@
 }
 
 .nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 2;
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
   background: var(--color-white);
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
   transition: grid-template-rows var(--motion), opacity var(--motion), visibility 0s linear 0.4s;
 }
 
 .header--open .nav {
   grid-template-rows: 1fr;
   border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
   transition: grid-template-rows var(--motion), opacity var(--motion), visibility 0s linear 0s;
 }
 
@@ -178,11 +186,14 @@
   }
 
   .nav {
+    position: static;
     grid-template-rows: 1fr;
     overflow: visible;
     border-top: 1px solid var(--color-line);
+    border-bottom: 0;
     visibility: visible;
     opacity: 1;
+    pointer-events: auto;
   }
 
   .nav > .wrap {

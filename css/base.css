@@ -105,7 +105,7 @@
 html {
   font-size: clamp(15px, 13.5px + 0.35vw, 18px);
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + var(--space-s));
+  scroll-padding-top: calc(var(--header-offset, var(--header-height)) + var(--space-s));
 }
 
 body {
@@ -118,14 +118,6 @@ body {
   background: var(--color-bg);
 }
 
-.catalog,
-.leasing,
-.trims,
-.tradein,
-.contacts {
-  scroll-margin-top: calc(var(--header-height) + var(--space-s));
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -133,8 +125,16 @@ img {
 }
 
 button,
-input {
+input,
+textarea,
+select {
   font: inherit;
+  color: inherit;
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 a {

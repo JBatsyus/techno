@@ -34,7 +34,7 @@ $lead = [
 ];
 
 $digits = preg_replace('/\D+/', '', $lead['phone']) ?? '';
-if (strlen($digits) !== 11 || !$lead['consent'] || !$lead['ads'] || $lead['form'] === '') {
+if (strlen($digits) !== 11 || !$lead['consent'] || $lead['form'] === '') {
     http_response_code(422);
     echo json_encode(['ok' => false, 'error' => 'fields'], JSON_UNESCAPED_UNICODE);
     exit;

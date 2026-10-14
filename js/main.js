@@ -10,6 +10,20 @@
       burger.setAttribute("aria-label", "Открыть меню");
     }
 
+    function scrollToSection(target, hash) {
+      window.requestAnimationFrame(function () {
+        var root = document.documentElement;
+        var top = target.getBoundingClientRect().top + window.scrollY - header.offsetHeight;
+        if (top < 0) top = 0;
+        var motion = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var previous = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+        window.scrollTo({ top: top, behavior: motion ? "smooth" : "auto" });
+        root.style.scrollBehavior = previous;
+        if (hash && window.history && history.pushState) history.pushState(null, "", hash);
+      });
+    }
+
     burger.addEventListener("click", function () {
       var open = header.classList.toggle("header--open");
       burger.setAttribute("aria-expanded", open ? "true" : "false");
@@ -17,9 +31,27 @@
     });
 
     nav.addEventListener("click", function (event) {
-      if (event.target.closest(".nav__link, [data-open-popup]")) {
-        closeMenu();
+      var link = event.target.closest(".nav__link");
+      if (link) {
+        var hash = link.getAttribute("href") || "";
+        var target = hash.charAt(0) === "#" ? document.querySelector(hash) : null;
+        if (target) {
+          event.preventDefault();
+          if (link.blur) link.blur();
+          closeMenu();
+          scrollToSection(target, hash);
+          return;
+        }
       }
+      if (event.target.closest("[data-open-popup]")) closeMenu();
+    });
+
+    window.addEventListener("popstate", function () {
+      if (!location.hash) return;
+      var target = document.querySelector(location.hash);
+      if (!target) return;
+      closeMenu();
+      scrollToSection(target);
     });
 
     document.addEventListener("click", function (event) {
@@ -30,6 +62,13 @@
   }
 
   if (header) {
+    function syncHeaderOffset() {
+      document.documentElement.style.setProperty("--header-offset", header.offsetHeight + "px");
+    }
+
+    syncHeaderOffset();
+    window.addEventListener("resize", syncHeaderOffset);
+
     header.addEventListener("mousedown", function (event) {
       if (event.button !== 0) return;
       if (!event.target.closest("[data-open-popup]")) return;
